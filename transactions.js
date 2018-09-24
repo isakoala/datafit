@@ -6,7 +6,7 @@ To find out what transactions were made using a card and to update the data on o
 
 Below, "internal" represents the successful transactions as at time === 7. Now, time > 7 and "external1" and "external2" represent 2 possible scenarios encountered when updating the card transactions on our side. Notice that in each scenario the external data contains transactions that we've already discarded, because the collection of payments fitting the total amount of 434 at time === 7 didn't include them. The only relevant new transactions, therefore, are from time > 7.
 
-Write an algorithm to determine which transactions fit the data and update our internal copy accordingly. You can start with the simpler scenario 1, but the end result needs to be generic, so that it can work with either (or any other) case.
+Write a function to determine which transactions fit the data and to update our internal copy accordingly. You can start with the simpler scenario 1, but the end result needs to be generic, so that it can work with either (or any other) case.
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
