@@ -78,3 +78,52 @@ const cardNumbers = [
   '0132540003715582',
   '0132540003715590'
 ];
+
+function getCardNoFromReferences() {
+
+    var initializeOccuranceArray;
+    var iterateThroughReferences;
+    var iterateThroughReferences2;
+    var iterateThroughCardNumbers;
+    var occurencesArray = [];
+
+    for (initializeOccuranceArray = 0; initializeOccuranceArray < references.length; initializeOccuranceArray++){
+
+        occurencesArray[initializeOccuranceArray] = 0;
+
+    }
+
+    for (iterateThroughReferences = 0; iterateThroughReferences < references.length; iterateThroughReferences++) {
+
+        var cardNumber = references[iterateThroughReferences].substring(references[iterateThroughReferences].indexOf(':') + 2, references[iterateThroughReferences].length - 7);
+
+        for(iterateThroughCardNumbers = 0; iterateThroughCardNumbers < cardNumbers.length; iterateThroughCardNumbers++){
+
+            if(parseInt(cardNumbers[iterateThroughCardNumbers]) === parseInt(cardNumber)){
+                
+                occurencesArray[iterateThroughReferences] = occurencesArray[iterateThroughReferences] + 1;
+    
+            }
+
+        }
+
+    }
+
+    for (iterateThroughReferences2 = 0; iterateThroughReferences2 < references.length; iterateThroughReferences2++){
+
+        var cardNumber = references[iterateThroughReferences2].substring(references[iterateThroughReferences2].indexOf(':') + 2, references[iterateThroughReferences2].length - 7);
+        
+        if (occurencesArray[iterateThroughReferences2] > 1){
+            console.log("Card Number: " + cardNumber + ", " + "Status: Multiple");
+        }
+        else if (occurencesArray[iterateThroughReferences2] == 1){
+            console.log("Card Number: " + cardNumber + ", " + "Status: Unique");
+        }
+        else{
+            console.log("Card Number: " + cardNumber + ", " + "Status: None");
+        }
+    }
+
+}
+
+getCardNoFromReferences();
