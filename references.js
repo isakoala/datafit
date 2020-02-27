@@ -1,10 +1,12 @@
 /*
 
-We allow prepaid debit card users to load money onto their card directly via a cash deposit. Users need to use their card number as reference. This mechanism works as long as a card can be uniquely identified.
+We allow prepaid debit card users to load money onto their card directly via a cash deposit. Users need to use their card number as a reference. This mechanism works as long as a card can be uniquely identified.
 
-Human error sometimes comes into play, if one or more digits is inadvertently dropped. In some cases the bank also abbreviates card numbers by replacing multiples of a particular digit with a letter.
+Human error sometimes comes into play, if one or more digits is inadvertently dropped. In some cases, the bank also abbreviates card numbers by replacing multiples of a particular digit with a letter.
 
-Below, "references" contains a sample of references for cash payments and "cardNumbers" contains the card numbers on our system. Write a function that extracts the relevant part of a reference and determines whether it mathes a card number unambiguously. For each reference, give a "match" status of "unique", "multiple" or "none".
+Below, "references" contains a sample of references for cash payments and "cardNumbers" contains the card numbers on our system. Write a function that extracts the relevant part of a reference and determines whether it matches a card number unambiguously. For each reference, give a "match" status of "unique", "multiple" or "none".
+
+You will be able to determine the value of some of the substitutions according to this particular list of card numbers, but you should regard this as an arbitrary subset of all numbers and thus not make any assumptions based on it alone. Instead, determine a match status if all you know is that a certain character needs to be replaced.
 
 (The actual card numbers have been obfuscated for security reasons, of course.)
 
